@@ -9,9 +9,9 @@
 	(relationship? [this] "Assertion is about a relationship?"))
 
 (defrecord Assertion [source
-					  property
-					  destination
-					  value]
+		          property
+		          destination
+		          value]
 	GraphRepr
 	(property? [this] (if (string/blank? (:value this)) false true))
 	(relationship? [this] (if (string/blank? (:value this)) true false)))
