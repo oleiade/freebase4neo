@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [
   	[org.clojure/clojure "1.3.0"]
+  	[org.clojure/clojure-contrib "1.2.0"]
   	[borneo "0.3.0"]
   ]
   :main freebase4neo.core

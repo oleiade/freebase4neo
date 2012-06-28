@@ -1,10 +1,13 @@
 (ns freebase4neo.core
-	(:require [borneo.core :as neo])
+	(:gen-class)
+	(:require [borneo.core :as neo]
+			  [freebase4neo.types :as types])
 	(:import (freebase4neo.types Assertion)))
 
 
 (defn -main
   "I don't do a whole lot."
   [& args]
-  ((def a (Assertion. "a" "b" "c" "d"))
-))
+  (let [A (types/Assertion. "a" "b" "c" "d")]
+  	(types/property? A))
+)
