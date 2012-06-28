@@ -3,7 +3,10 @@
 	(:require [borneo.core :as neo]
 		   [freebase4neo.types :as types])
 	(:import (freebase4neo.types Assertion))
-             (:use [clojure.tools.cli :only (cli)]))
+           (:import java.io.File)
+           (:use [clojure.tools.cli :only (cli)]
+                   [freebase4neo.types]
+                   [freebase4neo.fs :only (ls)]))
 
 (defn -main
   "I don't do a whole lot."
@@ -16,4 +19,5 @@
     (when (:help options)
         (println banner)
         (System/exit 0))
-    (println options)))
+    (println options)
+    (println (ls (File. (:data args))))))
