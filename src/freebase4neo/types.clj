@@ -1,7 +1,7 @@
 (ns freebase4neo.types
 	(:require [clojure.contrib.string :as string]))
 
-(defprotocol GraphRepr
+(defprotocol GraphElem
 	"A simple protocol helping to find out
 	what is the best graph representation of
 	an assertion"
@@ -12,6 +12,9 @@
 		          property
 		          destination
 		          value]
-	GraphRepr
+	GraphElem
 	(property? [this] (if (string/blank? (:value this)) false true))
 	(relationship? [this] (if (string/blank? (:value this)) true false)))
+
+(defn is-mid? [string]
+	(if (re-find #"^/m/(.*)$") true false)
