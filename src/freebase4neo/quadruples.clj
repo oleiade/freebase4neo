@@ -1,4 +1,4 @@
-(ns freebase4neo.types
+(ns freebase4neo.quadruples
 	(:require [clojure.contrib.string :as string]))
 
 (defprotocol GraphElem

@@ -1,10 +1,9 @@
 (ns freebase4neo.core
-	(:gen-class)
-	(:require [borneo.core :as neo]
-		        [freebase4neo.types :as types])
-	(:import (freebase4neo.types Assertion))
+  (:gen-class)
+  (:require [borneo.core :as neo]
+		    [freebase4neo.quadruples :as quadruples])
   (:use [clojure.tools.cli :only (cli)]
-        [freebase4neo.fs :only (ls tsv)]))
+          [freebase4neo.fs :only (ls tsv)]))
 
 (defn -main
   "I don't do a whole lot."
